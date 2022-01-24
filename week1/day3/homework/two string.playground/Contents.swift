@@ -28,8 +28,11 @@ let input07 = InputForTwoString(inputCount: 2,inputStringPair: [["aardvark","app
 
 
 func TwoString(s1:String,s2:String) -> String {
-    for character1 in s1 {
-        if s2.contains(character1) {
+    let s1Set = Set(s1)
+    let s2Set = Set(s2)
+    
+    for character1 in s1Set {
+        if s2Set.contains(character1) {
             return "YES"
         }
     }

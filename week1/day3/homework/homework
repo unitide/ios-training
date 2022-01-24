@@ -1,0 +1,102 @@
+Book: The Swift Programming Language
+1. Read: Control Transfer Statement - page 131
+2. Read: API Availability - page 140
+3. Read: Recursive Enumerations - page 187
+4. Read: Subscript - page 233
+5. Read: Convenience initializer - page 260
+6. Read: Deinitialization- page 286
+7. Read: Optional Chaining - page 290
+8. Read: Converting Erros to Optional Values - page 311
+9. Read: Downcasting - page 316
+10. Read. Delegation - page 344
+10. Read: Optional Protocol Requirements - page 361
+11. Read: Automatic Reference Counting - page 405
+
+## Questionaire:
+What is the difference between var and let?
+Answer: The key word var is used to define a variable which can be changed later. The key word let is used to define a constant which can't be changed
+        once it is assigned a value.
+
+What is an optional?
+Answer: An optional can have a real value or it doesn't have a value which is denoted as nil.
+
+What is optional chaining vs optional binding?
+Answer: Optional binding is used to check whether a optional contains a value or not. if it contains a value, you can assign its value to a temporary variable
+        or constant. The optional binding can be used as conditions in if or while statements.
+        Optional chaining is a process for querying and calling properties, methods, and Subscripts on an optional that might be nil Multiple queries can be chained
+        togegher and the entire chain failed gracefully if any of them is nil and don't generate a runtime error. Place a question mark after a optional and followed
+        by a period to query properties,methods or Subscripts.
+
+What are the different ways to unwrap an optional? How do they work? Are they safe?
+Answer:  There are several ways to unwrap an optional in Swift.
+   1: Forced unwrap by adding a exclamation mark to an optional, it is not safe.
+     for example, we define an optional.
+     var x : String? = "Optional test"
+     Now we can force it unwrap as follow:
+     let y: String = x!
+
+  2: optional binding and it is safe.
+    if let y = x {
+
+    }
+
+  3: optional chaining and it is safe.
+     var y:String = x?.count
+
+  4: Nil-Coalescing operator and it is safe. a ?? b unwraps an optional a if  it contains a value, or return a default value b.
+    let y = a ?? ""
+
+  5: guard statement and it is safe.
+    guard let y = x else {
+
+    }
+  6: Optional pattern and it is safe.It matches values wrapped in a some(Wrapped) case of an Optional<Wrapped> Enumeration.
+    if case let y? = x {
+      print(y)
+    }
+
+
+What is a closure?
+Answer: closures are self-contained blocks of functionality that can be passed around and used in code.it can be thought as a variable holds code.
+
+What is the difference between a class and a struct?
+Answer: The class and struct share lots of common features such as defining properties, methods, subscripts, initializers, conforming protocols etc.
+        but a class has additional capabilities which a struct doesn't have:
+        1: A class support inheritance.
+        2:  A class support type casting to enable the programmer check and interpret the type of a class instance at runtime.
+        3: A class support deinitializers to enable an instance of a class to free up any resources.
+        4: A class is a reference type and struct is a value type. it supports reference counting which allows more than one reference to a class instance.
+
+What is the syntax '??' do?
+Answer: ?? is nil-coalescing operator. let x = a ?? b unwraps an optional a if  it contains a value, or return a default value b.
+
+What is a tuple?
+Answer: A tuple groups multiple values into a single compound value. The values within a tuple can be of any type and don't have to be of the same type as
+        each other.
+
+What is Any vs AnyObject?
+Answer: Any can represent an instance of any type at all, including function types. AnyObject can represent an instance of any class type.
+
+What is a protocol?
+Answer: A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality.
+
+What is Delegation
+Answer: Delegation is a design pattern that enables a class to hand off (or “delegate”) some of its responsibilities to an instance of another class.
+       This design pattern is implemented by defining a protocol that encapsulates the delegated responsibilities, such that a conforming type is guaranteed to
+       provide the functionality that has been delegated.
+
+
+Read these articles
+https://developer.apple.com/documentation/swift/choosing_between_structures_and_classes
+https://fluffy.es/reference-vs-value-type/
+
+
+Read about Naming properties, func, protocols, best practice
+Explain UIKit - What is?
+The UIKit is a framework that provides the required infrastructure for iOS or tvOS apps running on iPhone, iPad, Apple TV ,etc. It provides the window and 
+view architecture for implementing the user interface, the event handling infrastructure for delivering Multi-Touch and other types of input to the app, and
+the main run loop needed to manage interactions among the user, the system, and the app. The UIKit also provides animation support, document support, drawing
+ and printing support, information about the current device, text management and display, search support, accessibility support, app extension support,
+ and resource management.
+
+- Basic App Using MVC with json file embedded. (Login -> tabbar -> List of activity master, detail
